@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk > /root/tmp
+    curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -22,7 +22,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -39,7 +39,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -241,8 +241,8 @@ systemctl daemon-reload > /dev/null 2>&1
 systemctl enable xtls > /dev/null 2>&1
 systemctl restart xtls > /dev/null 2>&1
 
-wget -q -O /usr/bin/addxtls "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/add.sh" && chmod +x /usr/bin/addxtls
-wget -q -O /usr/bin/delxtls "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/del.sh" && chmod +x /usr/bin/delxtls
-wget -q -O /usr/bin/cekxtls "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/chk.sh" && chmod +x /usr/bin/cekxtls
-wget -q -O /usr/bin/renewxtls "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/rnw.sh" && chmod +x /usr/bin/renewxtls
-wget -q -O /usr/bin/portxtls "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/pxt.sh" && chmod +x /usr/bin/portxtls
+wget -q -O /usr/bin/addxtls "https://raw.githubusercontent.com/scvpn/dotvpn/main/xray/add.sh" && chmod +x /usr/bin/addxtls
+wget -q -O /usr/bin/delxtls "https://raw.githubusercontent.com/scvpn/dotvpn/main/xray/del.sh" && chmod +x /usr/bin/delxtls
+wget -q -O /usr/bin/cekxtls "https://raw.githubusercontent.com/scvpn/dotvpn/main/xray/chk.sh" && chmod +x /usr/bin/cekxtls
+wget -q -O /usr/bin/renewxtls "https://raw.githubusercontent.com/scvpn/dotvpn/main/xray/rnw.sh" && chmod +x /usr/bin/renewxtls
+wget -q -O /usr/bin/portxtls "https://raw.githubusercontent.com/scvpn/dotvpn/main/xray/pxt.sh" && chmod +x /usr/bin/portxtls
