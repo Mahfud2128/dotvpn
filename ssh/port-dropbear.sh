@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk > /root/tmp
+    curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -22,7 +22,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -39,7 +39,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -83,12 +83,12 @@ fi
 cek=$(netstat -nutlp | grep -w $stl)
 if [[ -z $cek ]]; then
 sed -i "s/SSH Websocket           : $do1/SSH Websocket           : $stl/g" /root/log-install.txt
-systemctl stop scvpssshws.service >/dev/null 2>&1
+systemctl stop scvpnsshws.service >/dev/null 2>&1
 tmux kill-session -t sshws >/dev/null 2>&1
 sleep 1
 systemctl daemon-reload >/dev/null 2>&1
-systemctl enable scvpssshws.service >/dev/null 2>&1
-systemctl start scvpssshws.service >/dev/null 2>&1
+systemctl enable scvpnsshws.service >/dev/null 2>&1
+systemctl start scvpnsshws.service >/dev/null 2>&1
 echo -e "\e[032;1mPort $stl modified successfully\e[0m"
 else
 echo "Port $stl is used"
