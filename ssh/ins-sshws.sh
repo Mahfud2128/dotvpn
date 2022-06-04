@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk > /root/tmp
+    curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -22,7 +22,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -39,7 +39,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -66,14 +66,14 @@ fi
 
 portdb=`cat ~/log-install.txt | grep -w "Dropbear" | cut -d: -f2|sed 's/ //g' | cut -f2 -d","`
 portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
-if [ -f "/etc/systemd/system/scvpssshws.service" ]; then
+if [ -f "/etc/systemd/system/scvpnsshws.service" ]; then
 clear
 else
-wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/proxy3.js"
-cat <<EOF> /etc/systemd/system/scvpssshws.service
+wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/proxy3.js"
+cat <<EOF> /etc/systemd/system/scvpnsshws.service
 [Unit]
 Description=WSenabler
-Documentation=scriptvps@copyright
+Documentation=dotvpn@copyright
 
 [Service]
 Type=simple
@@ -96,10 +96,10 @@ PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 if [[ ! -z "${PID}" ]]; then
 echo "Already ON !"
 else
-wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler && /usr/bin/ssh-wsenabler
+wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler && /usr/bin/ssh-wsenabler
 systemctl daemon-reload >/dev/null 2>&1
-systemctl enable scvpssshws.service >/dev/null 2>&1
-systemctl start scvpssshws.service >/dev/null 2>&1
+systemctl enable scvpnsshws.service >/dev/null 2>&1
+systemctl start scvpnsshws.service >/dev/null 2>&1
 sed -i "/SSH Websocket/c\   - SSH Websocket           : $portsshws [ON]" /root/log-install.txt
 echo -e "${green}SSH Websocket Started${NC}"
 fi
@@ -108,7 +108,7 @@ fi
 function stop() {
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 if [[ ! -z "${PID}" ]]; then
-systemctl stop scvpssshws.service
+systemctl stop scvpnsshws.service
 tmux kill-session -t sshws
 sed -i "/SSH Websocket/c\   - SSH Websocket           : $portsshws [OFF]" /root/log-install.txt
 echo -e "${red}SSH Websocket Stopped${NC}"
@@ -137,4 +137,3 @@ fi
 read -n 1 -s -r -p "Press any key to back on menu"
 
 ssh-menu
-
