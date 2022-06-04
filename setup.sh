@@ -273,7 +273,7 @@ wget -q "https://raw.githubusercontent.com/scvpn/dotvpn/main/dll/cf.sh" && chmod
 fi
 
 wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/scvpn/dotvpn/main/newmenu.sh" && chmod +x /usr/bin/menu
-wget -q "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/ssh-vpn.sh" && chmod +x ssh-vpn.sh && screen -S sshvpn ./ssh-vpn.sh
+#wget -q "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/ssh-vpn.sh" && chmod +x ssh-vpn.sh && screen -S sshvpn ./ssh-vpn.sh
 if [ "$coreselect" = "v2ray" ]; then
 wget -q "https://raw.githubusercontent.com/scvpn/dotvpn/main/v2ray/ins-vt.sh" && chmod +x ins-vt.sh && screen -S insvt ./ins-vt.sh
 elif [ "$coreselect" = "xray" ]; then
