@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk > /root/tmp
+    curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -22,7 +22,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -39,7 +39,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -384,7 +384,7 @@ hargapptp=$(grep -w "Price PPTP" /etc/.maAsiss/price | awk '{print $NF}')
         return 0
     else
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-            --text "===========================\n⛔ ACCESS DENIED ⛔\n===========================\n\nfor register to be a reseller contact : $admin_bot_panel\n\n===========================\nBot Panel By : @scvps\n===========================\n"
+            --text "===========================\n⛔ ACCESS DENIED ⛔\n===========================\n\nfor register to be a reseller contact : $admin_bot_panel\n\n===========================\nBot Panel By : @scvpn\n===========================\n"
         return 0
     fi
 }
@@ -1447,7 +1447,7 @@ cret_res() {
     [[ "${message_from_id[$id]}" = "$Admin_ID" ]] && {
         t_res='reseller'
     }
-    Token=$(cat /tmp/scvpsss)
+    Token=$(cat /tmp/scvpnss)
     mkdir -p /etc/.maAsiss/db_reseller/"$uname_res"
     mkdir -p /etc/.maAsiss/db_reseller/"$uname_res"/user_by_res
     mkdir -p /etc/.maAsiss/db_reseller/"$uname_res"/trial-fold
@@ -6638,7 +6638,7 @@ uuidR=$(cat /proc/sys/kernel/random/uuid)
 uuid=$(cat /etc/trojan-go/idtrojango)
 sed -i '/"'""$uuid""'"$/a\,"'""$uuidR""'"' /etc/trojan-go/config.json
 echo -e "### $userna $exp $uuidR" | tee -a /etc/trojan-go/akun.conf
-linktrgo="trojan-go://${uuidR}@${domain}:${trgo}/?sni=${domain}%26type=ws%26host=${domain}%26path=/scvps%26encryption=none#${userna}"
+linktrgo="trojan-go://${uuidR}@${domain}:${trgo}/?sni=${domain}%26type=ws%26host=${domain}%26path=/scvpn%26encryption=none#${userna}"
 
 local env_msg
 env_msg="━━━━━━━━━━━━━━━━━━━━━\n<b>       🔸 TROJAN GO ACCOUNT 🔸 </b>\n━━━━━━━━━━━━━━━━━━━━━\n"
@@ -6649,7 +6649,7 @@ env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Port : $trgo\n"
 env_msg+="Key : $uuidR\n"
 env_msg+="Network : ws\n"
-env_msg+="Path : /scvps\n"
+env_msg+="Path : /scvpn\n"
 env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Link TRGO: \n\n"
 env_msg+="<code>$linktrgo</code>\n"
@@ -6682,7 +6682,7 @@ uuidR=$(cat /proc/sys/kernel/random/uuid)
 uuid=$(cat /etc/trojan-go/idtrojango)
 sed -i '/"'""$uuid""'"$/a\,"'""$uuidR""'"' /etc/trojan-go/config.json
 echo -e "### $userna $exp $uuidR" | tee -a /etc/trojan-go/akun.conf
-linktrgo="trojan-go://${uuidR}@${domain}:${trgo}/?sni=${domain}%26type=ws%26host=${domain}%26path=/scvps%26encryption=none#${userna}"
+linktrgo="trojan-go://${uuidR}@${domain}:${trgo}/?sni=${domain}%26type=ws%26host=${domain}%26path=/scvpn%26encryption=none#${userna}"
 
 local env_msg
 env_msg="━━━━━━━━━━━━━━━━━━━━━\n<b>       🔸 TROJAN GO ACCOUNT 🔸 </b>\n━━━━━━━━━━━━━━━━━━━━━\n"
@@ -6693,7 +6693,7 @@ env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Port : $trgo\n"
 env_msg+="Key : $uuidR\n"
 env_msg+="Network : ws\n"
-env_msg+="Path : /scvps\n"
+env_msg+="Path : /scvpn\n"
 env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Link TRGO: \n\n"
 env_msg+="<code>$linktrgo</code>\n"
@@ -6736,7 +6736,7 @@ uuidR=$(cat /proc/sys/kernel/random/uuid)
 uuid=$(cat /etc/trojan-go/idtrojango)
 sed -i '/"'""$uuid""'"$/a\,"'""$uuidR""'"' /etc/trojan-go/config.json
 echo -e "### $userna $exp $uuidR" | tee -a /etc/trojan-go/akun.conf
-linktrgo="trojan-go://${uuidR}@${domain}:${trgo}/?sni=${domain}%26type=ws%26host=${domain}%26path=/scvps%26encryption=none#${userna}"
+linktrgo="trojan-go://${uuidR}@${domain}:${trgo}/?sni=${domain}%26type=ws%26host=${domain}%26path=/scvpn%26encryption=none#${userna}"
 
 local env_msg
 env_msg="━━━━━━━━━━━━━━━━━━━━━\n<b>       🔸 TROJAN GO ACCOUNT 🔸 </b>\n━━━━━━━━━━━━━━━━━━━━━\n"
@@ -6747,7 +6747,7 @@ env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Port : $trgo\n"
 env_msg+="Key : $uuidR\n"
 env_msg+="Network : ws\n"
-env_msg+="Path : /scvps\n"
+env_msg+="Path : /scvpn\n"
 env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Link TRGO: \n\n"
 env_msg+="<code>$linktrgo</code>\n"
@@ -6781,7 +6781,7 @@ uuidR=$(cat /proc/sys/kernel/random/uuid)
 uuid=$(cat /etc/trojan-go/idtrojango)
 sed -i '/"'""$uuid""'"$/a\,"'""$uuidR""'"' /etc/trojan-go/config.json
 echo -e "### $userna $exp $uuidR" | tee -a /etc/trojan-go/akun.conf
-linktrgo="trojan-go://${uuidR}@${domain}:${trgo}/?sni=${domain}%26type=ws%26host=${domain}%26path=/scvps%26encryption=none#${userna}"
+linktrgo="trojan-go://${uuidR}@${domain}:${trgo}/?sni=${domain}%26type=ws%26host=${domain}%26path=/scvpn%26encryption=none#${userna}"
 
 local env_msg
 env_msg="━━━━━━━━━━━━━━━━━━━━━\n<b>       🔸 TROJAN GO ACCOUNT 🔸 </b>\n━━━━━━━━━━━━━━━━━━━━━\n"
@@ -6792,7 +6792,7 @@ env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Port : $trgo\n"
 env_msg+="Key : $uuidR\n"
 env_msg+="Network : ws\n"
-env_msg+="Path : /scvps\n"
+env_msg+="Path : /scvpn\n"
 env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Link TRGO: \n\n"
 env_msg+="<code>$linktrgo</code>\n"
@@ -6950,7 +6950,7 @@ uuidR=$(cat /proc/sys/kernel/random/uuid)
 uuid=$(cat /etc/trojan-go/idtrojango)
 sed -i '/"'""$uuid""'"$/a\,"'""$uuidR""'"' /etc/trojan-go/config.json
 echo -e "### $userna $exp $uuidR" | tee -a /etc/trojan-go/akun.conf
-linktrgo="trojan-go://${uuidR}@${domain}:${trgo}/?sni=${domain}%26type=ws%26host=${domain}%26path=/scvps%26encryption=none#${userna}"
+linktrgo="trojan-go://${uuidR}@${domain}:${trgo}/?sni=${domain}%26type=ws%26host=${domain}%26path=/scvpn%26encryption=none#${userna}"
 
 local env_msg
 env_msg="━━━━━━━━━━━━━━━━━━━━━\n<b>       🔸 TROJAN GO ACCOUNT 🔸 </b>\n━━━━━━━━━━━━━━━━━━━━━\n"
@@ -6961,7 +6961,7 @@ env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Port : $trgo\n"
 env_msg+="Key : $uuidR\n"
 env_msg+="Network : ws\n"
-env_msg+="Path : /scvps\n"
+env_msg+="Path : /scvpn\n"
 env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Link TRGO: \n\n"
 env_msg+="<code>$linktrgo</code>\n"
@@ -7717,7 +7717,7 @@ uuidR=$(cat /proc/sys/kernel/random/uuid)
 uuid=$(cat /etc/trojan-go/idtrojango)
 sed -i '/"'""$uuid""'"$/a\,"'""$uuidR""'"' /etc/trojan-go/config.json
 echo -e "### $userna $exp $uuidR" | tee -a /etc/trojan-go/akun.conf
-linktrgo="trojan-go://${uuidR}@${domain}:${trgo}/?sni=${domain}%26type=ws%26host=${domain}%26path=/scvps%26encryption=none#${userna}"
+linktrgo="trojan-go://${uuidR}@${domain}:${trgo}/?sni=${domain}%26type=ws%26host=${domain}%26path=/scvpn%26encryption=none#${userna}"
 
 local env_msg
 env_msg="━━━━━━━━━━━━━━━━━━━━━\n<b>    🔸 TROJAN GO ACCOUNT 🔸 </b>\n━━━━━━━━━━━━━━━━━━━━━\n"
@@ -7728,7 +7728,7 @@ env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Port : $trgo\n"
 env_msg+="Key : $uuidR\n"
 env_msg+="Network : ws\n"
-env_msg+="Path : /scvps\n"
+env_msg+="Path : /scvpn\n"
 env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Link TRGO: \n\n"
 env_msg+="<code>$linktrgo</code>\n"
@@ -7825,7 +7825,7 @@ while :; do
                     sizemax=$(echo -e ${#message_text[$id]})
                     [[ "$sizemax" -gt '10' ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvps]")" \
+                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvpn]")" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
@@ -8053,7 +8053,7 @@ while :; do
                             --text "Func Error Do Nothing" \
                             --reply_markup "$(ShellBot.ForceReply)"
                     }
-                    echo "${message_text[$id]}" >/tmp/scvpsss
+                    echo "${message_text[$id]}" >/tmp/scvpnss
                     echo "User: $_VAR1" >> $CAD_ARQ
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
                         --text 'Saldo:' \
@@ -8176,7 +8176,7 @@ while :; do
                     sizemax=$(echo -e ${#message_text[$id]})
                     [[ "$sizemax" -gt '10' ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvps]")" \
+                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvpn]")" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
@@ -8278,7 +8278,7 @@ while :; do
                     sizemax=$(echo -e ${#message_text[$id]})
                     [[ "$sizemax" -gt '10' ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvps]")" \
+                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvpn]")" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
@@ -8380,7 +8380,7 @@ while :; do
                     sizemax=$(echo -e ${#message_text[$id]})
                     [[ "$sizemax" -gt '10' ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvps]")" \
+                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvpn]")" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
@@ -8482,7 +8482,7 @@ while :; do
                     sizemax=$(echo -e ${#message_text[$id]})
                     [[ "$sizemax" -gt '10' ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvps]")" \
+                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvpn]")" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
@@ -8584,7 +8584,7 @@ while :; do
                     sizemax=$(echo -e ${#message_text[$id]})
                     [[ "$sizemax" -gt '10' ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvps]")" \
+                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvpn]")" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
@@ -8686,7 +8686,7 @@ while :; do
                     sizemax=$(echo -e ${#message_text[$id]})
                     [[ "$sizemax" -gt '10' ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvps]")" \
+                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvpn]")" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
@@ -8788,7 +8788,7 @@ while :; do
                     sizemax=$(echo -e ${#message_text[$id]})
                     [[ "$sizemax" -gt '10' ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvps]")" \
+                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvpn]")" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
@@ -8897,7 +8897,7 @@ while :; do
                     sizemax=$(echo -e ${#message_text[$id]})
                     [[ "$sizemax" -gt '10' ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvps]")" \
+                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvpn]")" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
@@ -9006,7 +9006,7 @@ while :; do
                     sizemax=$(echo -e ${#message_text[$id]})
                     [[ "$sizemax" -gt '10' ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvps]")" \
+                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvpn]")" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
@@ -9115,7 +9115,7 @@ while :; do
                     sizemax=$(echo -e ${#message_text[$id]})
                     [[ "$sizemax" -gt '10' ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvps]")" \
+                            --text "$(echo -e "⛔ Use no maximum 10 characters [EX: scvpn]")" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
