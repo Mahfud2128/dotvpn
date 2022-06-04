@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk > /root/tmp
+    curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -22,7 +22,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -39,7 +39,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -65,7 +65,7 @@ exit 0
 fi
 
 ipes=$(curl -sS ipv4.icanhazip.com)
-surat=$(curl -sS https://raw.githubusercontent.com/scvps/perizinan/main/authbot | grep -w $ipes | awk '{print $4}'  )
+surat=$(curl -sS https://raw.githubusercontent.com/scvpn/perizinan/main/authbot | grep -w $ipes | awk '{print $4}'  )
 if [[ "$surat" = "true" ]]; then
 echo -ne
 else
@@ -116,7 +116,7 @@ EOF
 fun_botOnOff() {
 dircreate
         [[ ! -f /etc/.maAsiss/bot.conf ]] && {
-        echo -e "Scvps Bot Panel Installer
+        echo -e "scvpn Bot Panel Installer
         "
         [[ ! -f /root/ResBotAuth ]] && {
         echo -ne "Input your Bot TOKEN : "
@@ -134,9 +134,9 @@ dircreate
         read limit_pnl
         [[ -z $limit_pnl ]] && limit_pnl="1"
         echo ""
-        echo -ne "Your name store [dafult: SCVPS-STORE] : "
+        echo -ne "Your name store [dafult: scvpn-STORE] : "
         read store_pnl
-        [[ -z $store_pnl ]] && store_pnl="SCVPS-STORE"
+        [[ -z $store_pnl ]] && store_pnl="scvpn-STORE"
         echo ""
 cat <<-EOF >/etc/.maAsiss/bot.conf
 admin_panel : $admin_pnl
@@ -149,28 +149,28 @@ EOF
             [[ ! -e "/etc/.maAsiss/.Shellbtsss" ]] && {
 				wget -qO- https://scrzoke.000webhostapp.com/crud/ShellBot.sh >/etc/.maAsiss/.Shellbtsss
 			}
-			[[ "$(grep -wc "scvps_bot" "/etc/rc.local")" = '0' ]] && {
-			    sed -i '$ i\screen -dmS scvps_bot bbt' /etc/rc.local >/dev/null 2>&1
+			[[ "$(grep -wc "scvpn_bot" "/etc/rc.local")" = '0' ]] && {
+			    sed -i '$ i\screen -dmS scvpn_bot bbt' /etc/rc.local >/dev/null 2>&1
 			}
         }
-        screen -dmS scvps_bot bbt >/dev/null 2>&1
+        screen -dmS scvpn_bot bbt >/dev/null 2>&1
         fun_bot1
-        [[ $(ps x | grep "scvps_bot" | grep -v grep | wc -l) != '0' ]] && echo -e "\nBot successfully activated !" || echo -e "\nError1! Information not valid !"
+        [[ $(ps x | grep "scvpn_bot" | grep -v grep | wc -l) != '0' ]] && echo -e "\nBot successfully activated !" || echo -e "\nError1! Information not valid !"
         sleep 2
         menu
         } || {
        clear
         echo -e "Info...\n"
         fun_bot2() {
-            screen -r -S "scvps_bot" -X quit >/dev/null 2>&1
-            [[ $(grep -wc "scvps_bot" /etc/rc.local) != '0' ]] && {
-                sed -i '/scvps_bot/d' /etc/rc.local
+            screen -r -S "scvpn_bot" -X quit >/dev/null 2>&1
+            [[ $(grep -wc "scvpn_bot" /etc/rc.local) != '0' ]] && {
+                sed -i '/scvpn_bot/d' /etc/rc.local
             }
             rm -f /etc/.maAsiss/bot.conf
             sleep 1
         }
         fun_bot2
-        echo -e "\nBot Scvps Stopped!"
+        echo -e "\nBot scvpn Stopped!"
         sleep 2
         menu
     }
