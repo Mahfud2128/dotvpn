@@ -7,7 +7,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk > /root/tmp
+    curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -25,7 +25,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -42,7 +42,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -55,7 +55,7 @@ red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
 NC='\e[0m'
-curl -sS https://raw.githubusercontent.com/scvps/scriptvps/main/resources/ascii-home
+curl -sS https://raw.githubusercontent.com/scvpn/dotvpn/main/resources/ascii-home
 echo "SSH & Ovpn"
 echo "Progress..."
 sleep 3
@@ -82,10 +82,10 @@ locality=ID
 organization=None
 organizationalunit=None
 commonname=None
-email=github@scvps
+email=github@scvpn
 
 # simple password minimal
-curl -sS https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
+curl -sS https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvpn07gg -pbkdf2 > /etc/pam.d/common-password
 chmod +x /etc/pam.d/common-password
 
 cd
@@ -229,7 +229,7 @@ server {
 END
 systemctl enable nginx.service >/dev/null 2>&1
 systemctl restart nginx.service >/dev/null 2>&1
-echo "telegram.com/scvps" > /home/vps/public_html/index.html
+echo "telegram.com/scvpn" > /home/vps/public_html/index.html
 # install badvpn
 tesmatch=`screen -list | awk  '{print $1}' | grep -ow "badvpn" | sort | uniq`
 if [ "$tesmatch" = "badvpn" ]; then
@@ -253,7 +253,7 @@ echo -ne
 fi
 cd
 echo -e "[ ${green}INFO$NC ] Installing badvpn for game support..."
-wget -q -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/newudpgw"
+wget -q -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/newudpgw"
 chmod +x /usr/bin/badvpn-udpgw  >/dev/null 2>&1
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local >/dev/null 2>&1
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local >/dev/null 2>&1
@@ -280,7 +280,7 @@ fi
 
 # install squid
 cd
-curl -sS "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/squid3.conf" | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/squid/squid.conf
+curl -sS "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/squid3.conf" | openssl aes-256-cbc -d -a -pass pass:scvpn07gg -pbkdf2 > /etc/squid/squid.conf
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # install stunnel
@@ -321,7 +321,7 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 #OpenVPN
 sleep 1
 echo -e "[ ${green}INFO$NC ] Install Openvpn"
-wget -q https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget -q https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 # Instal DDOS Flate
@@ -348,13 +348,13 @@ echo -e "[ ${green}INFO$NC ] Config file at /usr/local/ddos/ddos.conf"
 # banner /etc/issue.net
 sleep 1
 echo -e "[ ${green}INFO$NC ] Settings banner"
-wget -q -O /etc/issue.net "https://raw.githubusercontent.com/scvps/scriptvps/main/banner/issue.net"
+wget -q -O /etc/issue.net "https://raw.githubusercontent.com/scvpn/dotvpn/main/banner/issue.net"
 chmod +x /etc/issue.net
 echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 cat> /etc/issue.net << END
 <font color="red"><b>============================</b></font><br> 
-<font color="white"><b>         SCRIPTVPS         </b></font><br> 
+<font color="white"><b>         dotvpn         </b></font><br> 
 <font color="red"><b>============================</b></font>
 END
 echo -e "[ ${green}INFO$NC ] Set iptables"
@@ -376,29 +376,29 @@ sudo netfilter-persistent save >/dev/null 2>&1
 sudo netfilter-persistent reload >/dev/null 2>&1
 
 # download script
-wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/usernew.sh" && chmod +x /usr/bin/usernew
-wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/trial.sh" && chmod +x /usr/bin/trial
-wget -q -O /usr/bin/hapus "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/hapus.sh" && chmod +x /usr/bin/hapus
-wget -q -O /usr/bin/member "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/member.sh" && chmod +x /usr/bin/member
-wget -q -O /usr/bin/delete "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/delete.sh" && chmod +x /usr/bin/delete
-wget -q -O /usr/bin/cek "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/cek.sh" && chmod +x /usr/bin/cek
-wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/restart.sh" && chmod +x /usr/bin/restart
-wget -q -O /usr/bin/renew "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/renew.sh" && chmod +x /usr/bin/renew
-wget -q -O /usr/bin/autokill "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/autokill.sh" && chmod +x /usr/bin/autokill
-wget -q -O /usr/bin/ceklim "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/ceklim.sh" && chmod +x /usr/bin/ceklim
-wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/tendang.sh" && chmod +x /usr/bin/tendang
-wget -q -O /usr/bin/port-dropbear "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/port-dropbear.sh" && chmod +x /usr/bin/port-dropbear
-wget -q -O /usr/bin/port-ovpn "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/port-ovpn.sh" && chmod +x /usr/bin/port-ovpn
-wget -q -O /usr/bin/port-ssl "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/port-ssl.sh" && chmod +x /usr/bin/port-ssl
-wget -q -O /usr/bin/banner "https://raw.githubusercontent.com/scvps/scriptvps/main/banner/banner.sh" && chmod +x /usr/bin/banner
-wget -q -O /usr/bin/sshws "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/ins-sshws.sh" && chmod +x /usr/bin/sshws
-wget -q -O /usr/bin/ssh-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/ssh-menu.sh" && chmod +x /usr/bin/ssh-menu
-wget -q -O /usr/bin/port-wssl "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/port-ws-ssl.sh" && chmod +x /usr/bin/port-wssl
+wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/usernew.sh" && chmod +x /usr/bin/usernew
+wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/trial.sh" && chmod +x /usr/bin/trial
+wget -q -O /usr/bin/hapus "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/hapus.sh" && chmod +x /usr/bin/hapus
+wget -q -O /usr/bin/member "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/member.sh" && chmod +x /usr/bin/member
+wget -q -O /usr/bin/delete "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/delete.sh" && chmod +x /usr/bin/delete
+wget -q -O /usr/bin/cek "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/cek.sh" && chmod +x /usr/bin/cek
+wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/restart.sh" && chmod +x /usr/bin/restart
+wget -q -O /usr/bin/renew "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/renew.sh" && chmod +x /usr/bin/renew
+wget -q -O /usr/bin/autokill "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/autokill.sh" && chmod +x /usr/bin/autokill
+wget -q -O /usr/bin/ceklim "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/ceklim.sh" && chmod +x /usr/bin/ceklim
+wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/tendang.sh" && chmod +x /usr/bin/tendang
+wget -q -O /usr/bin/port-dropbear "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/port-dropbear.sh" && chmod +x /usr/bin/port-dropbear
+wget -q -O /usr/bin/port-ovpn "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/port-ovpn.sh" && chmod +x /usr/bin/port-ovpn
+wget -q -O /usr/bin/port-ssl "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/port-ssl.sh" && chmod +x /usr/bin/port-ssl
+wget -q -O /usr/bin/banner "https://raw.githubusercontent.com/scvpn/dotvpn/main/banner/banner.sh" && chmod +x /usr/bin/banner
+wget -q -O /usr/bin/sshws "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/ins-sshws.sh" && chmod +x /usr/bin/sshws
+wget -q -O /usr/bin/ssh-menu "https://raw.githubusercontent.com/scvpn/dotvpn/main/menu_all/ssh-menu.sh" && chmod +x /usr/bin/ssh-menu
+wget -q -O /usr/bin/port-wssl "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/port-ws-ssl.sh" && chmod +x /usr/bin/port-wssl
 wget -q -O /usr/bin/ohp https://scrzoke.000webhostapp.com/ohp && chmod +x /usr/bin/ohp
-wget -q -O /usr/bin/ohp-ssh "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/ohp-ssh.sh" && chmod +x /usr/bin/ohp-ssh
-wget -q -O /usr/bin/ohp-db "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/ohp-db.sh" && chmod +x /usr/bin/ohp-db
-wget -q -O /usr/bin/ohp-opn "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/ohp-opn.sh" && chmod +x /usr/bin/ohp-opn
-wget -q -O /usr/bin/portohp "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/portohp.sh" && chmod +x /usr/bin/portohp
+wget -q -O /usr/bin/ohp-ssh "https://raw.githubusercontent.com/scvpn/dotvpn/main/dll/ohp-ssh.sh" && chmod +x /usr/bin/ohp-ssh
+wget -q -O /usr/bin/ohp-db "https://raw.githubusercontent.com/scvpn/dotvpn/main/dll/ohp-db.sh" && chmod +x /usr/bin/ohp-db
+wget -q -O /usr/bin/ohp-opn "https://raw.githubusercontent.com/scvpn/dotvpn/main/dll/ohp-opn.sh" && chmod +x /usr/bin/ohp-opn
+wget -q -O /usr/bin/portohp "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/portohp.sh" && chmod +x /usr/bin/portohp
 
 cat <<EOF > /etc/systemd/system/ohp-ssh.service
 [Unit]
