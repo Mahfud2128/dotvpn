@@ -63,4 +63,4 @@ listClients(){
 listClients
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 read -n 1 -s -r -p "Press any key to back on menu"
-wg-menu
+wg-menu 
