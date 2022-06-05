@@ -120,13 +120,13 @@ echo -e "\E[44;1;39m                ⇱ SETTINGS  MENU ⇲                \E[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\033[1;33mSettings\033[0m :
 
-[\033[0;32m01\033[0m] • Add/Change VPS Host Subdomain
-[\033[0;32m02\033[0m] • Add Subdomain to Cloudflare
-[\033[0;32m03\033[0m] • Add Pointing Bug
-[\033[0;32m04\033[0m] • Renew Certificate $kjj
-[\033[0;32m05\033[0m] • Change Banner VPS
-[\033[0;32m06\033[0m] • Change VPS Auto Reboot Time
-[\033[0;32m07\033[0m] • Limit Bandwidth Speed Server
+[\033[0;32m01\033[0m]  • Add/Change VPS Host Subdomain
+[\033[0;32m02\033[0m]  • Add Subdomain to Cloudflare
+[\033[0;32m03\033[0m]  • Add Pointing Bug
+[\033[0;32m04\033[0m]  • Renew Certificate $kjj
+[\033[0;32m05\033[0m]  • Change Banner VPS
+[\033[0;32m06\033[0m]  • Change VPS Auto Reboot Time
+[\033[0;32m07\033[0m]  • Limit Bandwidth Speed Server
 [\033[0;32m100\033[0m] • Restart All Service
 [\033[0;32m101\033[0m] • Disable Torrent $sts
 [\033[0;32m102\033[0m] • Ram Cache Cleaner
