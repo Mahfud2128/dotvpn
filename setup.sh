@@ -246,7 +246,7 @@ read answer
                 Then a random domain will be created
                 "
                 sleep 2
-                sub=scvpn`</dev/urandom tr -dc a-z0-9 | head -c4`
+                sub=scvps`</dev/urandom tr -dc a-z0-9 | head -c4`
                 echo "peler=${sub}" > /root/scdomain
             else
                 echo "peler=$pp" > /root/scdomain
@@ -264,7 +264,7 @@ read -rp "Input ur domain : " -e pp
         Then a random domain will be created
         "
         sleep 2
-        sub=scvpn`</dev/urandom tr -dc a-z0-9 | head -c4`
+        sub=scvps`</dev/urandom tr -dc a-z0-9 | head -c4`
         echo "peler=${sub}" > /root/scdomain
     else
         echo "peler=$pp" > /root/scdomain
