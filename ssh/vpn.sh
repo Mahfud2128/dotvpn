@@ -97,6 +97,7 @@ sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 
 # Buat config client TCP 1194
 cat > /etc/openvpn/Tcp.ovpn <<-END
+setenv FRIENDLY_NAME "SCVPN-DT"
 client
 dev tun
 proto tcp
@@ -115,6 +116,7 @@ sed -i $MYIP2 /etc/openvpn/Tcp.ovpn
 
 # Buat config client UDP 2200
 cat > /etc/openvpn/Udp.ovpn <<-END
+setenv FRIENDLY_NAME "SCVPN-DT"
 client
 dev tun
 proto udp
@@ -133,6 +135,7 @@ sed -i $MYIP2 /etc/openvpn/Udp.ovpn
 
 # Buat config client SSL
 cat > /etc/openvpn/SSL.ovpn <<-END
+setenv FRIENDLY_NAME "SCVPN-DT"
 client
 dev tun
 proto tcp
@@ -149,9 +152,38 @@ END
 
 sed -i $MYIP2 /etc/openvpn/SSL.ovpn
 
+# Buat config client TCP 6969
+cat > /etc/openvpn/OHP.ovpn <<-END
+setenv FRIENDLY_NAME "SCVPN-DT"
+client
+dev tun
+proto tcp
+remote xxxxxxxxx 
+port 1194
+http-proxy xxxxxxxxx 6969
+resolv-retry infinite
+route-method exe
+nobind
+persist-key
+persist-tun
+auth-user-pass
+comp-lzo
+verb 3
+END
+
+sed -i $MYIP2 /etc/openvpn/Tcp.ovpn
+
 cd
 # pada tulisan xxx ganti dengan alamat ip address VPS anda 
 /etc/init.d/openvpn restart >/dev/null 2>&1
+
+# masukkan certificatenya ke dalam config client OHP 1194
+echo '<ca>' >> /etc/openvpn/OHP.ovpn
+cat /etc/openvpn/server/ca.crt >> /etc/openvpn/OHP.ovpn
+echo '</ca>' >> /etc/openvpn/OHP.ovpn
+
+# Copy config OpenVPN client ke home directory root agar mudah didownload ( TCP 1194 )
+cp /etc/openvpn/Tcp.ovpn /home/vps/public_html/OHP.ovpn
 
 # masukkan certificatenya ke dalam config client TCP 1194
 echo '<ca>' >> /etc/openvpn/Tcp.ovpn
@@ -196,7 +228,7 @@ systemctl start openvpn >/dev/null 2>&1
 # Delete script
  
 cd /home/vps/public_html/
-zip cfg.zip Tcp.ovpn Udp.ovpn SSL.ovpn > /dev/null 2>&1
+zip cfg.zip Tcp.ovpn Udp.ovpn SSL.ovpn OHP.ovpn > /dev/null 2>&1
 cd
 cat <<'mySiteOvpn' > /home/vps/public_html/index.html
 <!DOCTYPE html>
