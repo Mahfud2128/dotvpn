@@ -251,12 +251,6 @@ min-height: 100%;
 }
 body {
 background-color: #333;
-background-image: -webkit-radial-gradient(circle, hsla(0,0%,100%,.1), hsla(0,0%,0%,.25)),
--webkit-radial-gradient(circle, hsla(0,0%,0%,.5) 25%, transparent 25%),
--webkit-radial-gradient(circle, hsla(0,0%,100%,.05) 30%, transparent 30%);
-background-position: 50% 75%, 50% 0, 50% .1em;
-background-repeat: no-repeat, repeat, repeat;
-background-size: 150% 150%, .5em .5em, .5em .5em;
 font-size: 100%;
 padding-bottom: 1.5em;
 }
@@ -502,7 +496,7 @@ width: 81em;
 <li>
 <i class="icon BLOG"></i>
 <p>DOTYCAT BLOG</p>
-<a href="https://www.dotycat.com/">Visit Blog</a>
+<a href="https://www.dotycat.com/">VISIT BLOG</a>
 </li>
 </ul>
 </div>
