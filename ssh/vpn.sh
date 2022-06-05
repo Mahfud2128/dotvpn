@@ -74,7 +74,7 @@ apt install openssl iptables iptables-persistent -y >/dev/null 2>&1
 mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
 wget -q https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/vpn.zip
-unzip -o -P scvpn07 vpn.zip >/dev/null 2>&1
+unzip -o -P scvps07 vpn.zip >/dev/null 2>&1
 rm -f vpn.zip
 chown -R root:root /etc/openvpn/server/easy-rsa/
 
