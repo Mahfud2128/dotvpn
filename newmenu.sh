@@ -68,7 +68,7 @@ else
 Exp=$(curl -sS https://raw.githubusercontent.com/scvpn/scvpn/main/ipvps | grep $MYIP | awk '{print $3}')
 fi
 chck_b(){
-	PID=`ps -ef |grep -v grep | grep scvpn_bot |awk '{print $2}'`
+	PID=`ps -ef |grep -v grep | grep scvps_bot |awk '{print $2}'`
 	if [[ ! -z "${PID}" ]]; then
 			sts="\033[0;32m◉ \033[0m"
 		else
