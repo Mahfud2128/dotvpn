@@ -76,16 +76,16 @@ source /etc/os-release
 ver=$VERSION_ID
 
 #detail nama perusahaan
-country=ID
-state=ID
-locality=ID
+country=MY
+state=MY
+locality=MY
 organization=None
 organizationalunit=None
 commonname=None
 email=github@scvpn
 
 # simple password minimal
-curl -sS https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvpn07gg -pbkdf2 > /etc/pam.d/common-password
+curl -sS https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
 chmod +x /etc/pam.d/common-password
 
 cd
@@ -229,7 +229,7 @@ server {
 END
 systemctl enable nginx.service >/dev/null 2>&1
 systemctl restart nginx.service >/dev/null 2>&1
-echo "telegram.com/scvpn" > /home/vps/public_html/index.html
+echo "t.me/anzclan" > /home/vps/public_html/index.html
 # install badvpn
 tesmatch=`screen -list | awk  '{print $1}' | grep -ow "badvpn" | sort | uniq`
 if [ "$tesmatch" = "badvpn" ]; then
@@ -280,7 +280,7 @@ fi
 
 # install squid
 cd
-curl -sS "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/squid3.conf" | openssl aes-256-cbc -d -a -pass pass:scvpn07gg -pbkdf2 > /etc/squid/squid.conf
+curl -sS "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/squid3.conf" | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/squid/squid.conf
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # install stunnel
@@ -354,7 +354,7 @@ echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 cat> /etc/issue.net << END
 <font color="red"><b>============================</b></font><br> 
-<font color="white"><b>         dotvpn         </b></font><br> 
+<font color="white"><b>         SCRIPTVPN         </b></font><br> 
 <font color="red"><b>============================</b></font>
 END
 echo -e "[ ${green}INFO$NC ] Set iptables"
@@ -394,7 +394,7 @@ wget -q -O /usr/bin/banner "https://raw.githubusercontent.com/scvpn/dotvpn/main/
 wget -q -O /usr/bin/sshws "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/ins-sshws.sh" && chmod +x /usr/bin/sshws
 wget -q -O /usr/bin/ssh-menu "https://raw.githubusercontent.com/scvpn/dotvpn/main/menu_all/ssh-menu.sh" && chmod +x /usr/bin/ssh-menu
 wget -q -O /usr/bin/port-wssl "https://raw.githubusercontent.com/scvpn/dotvpn/main/ssh/port-ws-ssl.sh" && chmod +x /usr/bin/port-wssl
-#wget -q -O /usr/bin/ohp https://scrzoke.000webhostapp.com/ohp && chmod +x /usr/bin/ohp
+wget -q -O /usr/bin/ohp https://scrzoke.000webhostapp.com/ohp && chmod +x /usr/bin/ohp
 wget -q -O /usr/bin/ohp-ssh "https://raw.githubusercontent.com/scvpn/dotvpn/main/dll/ohp-ssh.sh" && chmod +x /usr/bin/ohp-ssh
 wget -q -O /usr/bin/ohp-db "https://raw.githubusercontent.com/scvpn/dotvpn/main/dll/ohp-db.sh" && chmod +x /usr/bin/ohp-db
 wget -q -O /usr/bin/ohp-opn "https://raw.githubusercontent.com/scvpn/dotvpn/main/dll/ohp-opn.sh" && chmod +x /usr/bin/ohp-opn
