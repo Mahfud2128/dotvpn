@@ -331,10 +331,6 @@ text-shadow: 0 1px 1px #fff;
 }
 a {
 background-color: #f6f6f6;
-background-image: -webkit-radial-gradient(circle, transparent, hsla(0,0%,0%,.15)),
--webkit-linear-gradient(hsla(0,0%,0%,.15), hsla(0,0%,0%,.025) 45%, transparent 50%);
-background-position: 50% 100%, 0 100%;
-background-size: 100% 200%, 100% 200%;
 border-radius: 0 0 .25em .25em;
 box-shadow: inset 0 1px 0 hsla(0,0%,100%,1),
 0 0 0 1px hsla(0,0%,0%,.25),
@@ -402,23 +398,23 @@ position: absolute;
 top: 0;
 width: 100%;
 }
-.css:after { 
-content: 'CSS';
+.TCP:after { 
+content: 'TCP';
 }
-.html:after {
-content: 'HTML';
+.UDP:after {
+content: 'UDP';
 }
-.image:after {
-content: 'Image';
+.OHP:after {
+content: 'OHP';
 }
-.jquery:after {
-content: 'jQuery';
+.SSL:after {
+content: 'SSL';
 }
-.psd:after {
-content: 'PSD';
+.ZIP:after {
+content: 'ZIP';
 }
-.video:after {
-content: 'Video';
+.BLOG:after {
+content: 'BLOG';
 }
 @media (min-width: 52.85em) {
 header div {
@@ -441,7 +437,7 @@ width: 81em;
 
 <header>
 <div>
-<a href="#">&larr; Back to DOTYCAT.COM</a>
+<a href="https://dotycat.com/">&larr; Back to DOTYCAT.COM</a>
 </div>
 </header>
 <div class="content">
@@ -449,32 +445,32 @@ width: 81em;
 <li>
 <i class="icon TCP"></i>
 <p>TCP OpenVPN</p>
-<a href="#">Download</a>
+<a href="http://IP-ADDRESSS:81/Tcp.ovpn">Download</a>
 </li>
 <li>
 <i class="icon UDP"></i>
 <p>UDP OpenVPN</p>
-<a href="#">Download</a>
+<a href="http://IP-ADDRESSS:81/Udp.ovpn">Download</a>
 </li>
 <li>
 <i class="icon SSL"></i>
 <p>SSL OpenVPN</p>
-<a href="#">Download</a>
+<a href="http://IP-ADDRESSS:81/SSL.ovpn">Download</a>
 </li>
 <li>
 <i class="icon OHP"></i>
 <p>OHP OpenVPN</p>
-<a href="#">Download</a>
+<a href="http://IP-ADDRESSS:81/OHP.ovpn">Download</a>
 </li>
 <li>
 <i class="icon ZIP"></i>
 <p>OpenVPN ZIP</p>
-<a href="#">Download</a>
+<a href="http://IP-ADDRESSS:81/cfg.zip">Download</a>
 </li>
 <li>
 <i class="icon BLOG"></i>
 <p>DOTYCAT BLOG</p>
-<a href="#">Visit Blog</a>
+<a href="https://www.dotycat.com/">Visit Blog</a>
 </li>
 </ul>
 </div>
