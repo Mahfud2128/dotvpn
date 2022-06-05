@@ -171,7 +171,7 @@ comp-lzo
 verb 3
 END
 
-sed -i $MYIP2 /etc/openvpn/Tcp.ovpn
+sed -i $MYIP2 /etc/openvpn/OHP.ovpn
 
 cd
 # pada tulisan xxx ganti dengan alamat ip address VPS anda 
@@ -182,8 +182,8 @@ echo '<ca>' >> /etc/openvpn/OHP.ovpn
 cat /etc/openvpn/server/ca.crt >> /etc/openvpn/OHP.ovpn
 echo '</ca>' >> /etc/openvpn/OHP.ovpn
 
-# Copy config OpenVPN client ke home directory root agar mudah didownload ( TCP 1194 )
-cp /etc/openvpn/Tcp.ovpn /home/vps/public_html/OHP.ovpn
+# Copy config OpenVPN client ke home directory root agar mudah didownload ( ohp 1194 )
+cp /etc/openvpn/OHP.ovpn /home/vps/public_html/OHP.ovpn
 
 # masukkan certificatenya ke dalam config client TCP 1194
 echo '<ca>' >> /etc/openvpn/Tcp.ovpn
