@@ -136,8 +136,8 @@ sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local >/d
 
 # set time GMT +7
 sleep 1
-echo -e "[ ${green}INFO$NC ] Set zona local time to Asia/Jakarta GMT+7"
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+echo -e "[ ${green}INFO$NC ] Set zona local time to Asia/Asia/Kuala_Lumpur GMT+8"
+ln -fs /usr/share/zoneinfo/Asia/Asia/Kuala_Lumpur /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
@@ -498,7 +498,7 @@ fi
 cd
 chown -R www-data:www-data /home/vps/public_html
 sleep 1
-echo -e "$yell[SERVICE]$NC Restart All service SSH & OVPN"
+echo -e "$yell[INFO]$NC Restart All service SSH & OVPN"
 /etc/init.d/nginx restart >/dev/null 2>&1
 sleep 1
 echo -e "[ ${green}ok${NC} ] Restarting nginx"
