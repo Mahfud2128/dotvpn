@@ -123,7 +123,7 @@ fi
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Setting config... "
 mv /etc/accel-ppp.conf.dist /etc/accel-ppp.conf > /dev/null 2>&1
-curl -sS "https://raw.githubusercontent.com/scvpn/dotvpn/main/sstp/accel.conf" | openssl aes-256-cbc -d -a -pass pass:scvpn07gg -pbkdf2 > /etc/accel-ppp.conf
+curl -sS "https://raw.githubusercontent.com/scvpn/dotvpn/main/sstp/accel.conf" | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/accel-ppp.conf
 sed -i $MYIP2 /etc/accel-ppp.conf
 chmod +x /etc/accel-ppp.conf
 sleep 1
