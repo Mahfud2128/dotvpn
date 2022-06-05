@@ -93,7 +93,7 @@ echo -e "\033[1;32mAbout\033[0m :
    Time     : $WKT
    IPVPS    : $IPVPS
    
-   \033[1;33mThis script by : scvpn | t.me/ApaItuLeee\033[0m
+   \033[1;33mThis script by : scvpn | t.me/anzclan\033[0m
 "
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m
 \033[1;32mPort Information\033[0m :
