@@ -116,7 +116,7 @@ EOF
 fun_botOnOff() {
 dircreate
         [[ ! -f /etc/.maAsiss/bot.conf ]] && {
-        echo -e "scvpn Bot Panel Installer
+        echo -e "Scvps Bot Panel Installer
         "
         [[ ! -f /root/ResBotAuth ]] && {
         echo -ne "Input your Bot TOKEN : "
@@ -134,9 +134,9 @@ dircreate
         read limit_pnl
         [[ -z $limit_pnl ]] && limit_pnl="1"
         echo ""
-        echo -ne "Your name store [dafult: scvpn-STORE] : "
+        echo -ne "Your name store [dafult: SCVPS-STORE] : "
         read store_pnl
-        [[ -z $store_pnl ]] && store_pnl="scvpn-STORE"
+        [[ -z $store_pnl ]] && store_pnl="SCVPS-STORE"
         echo ""
 cat <<-EOF >/etc/.maAsiss/bot.conf
 admin_panel : $admin_pnl
@@ -147,30 +147,30 @@ EOF
         echo -e "Info...\n"
         fun_bot1() {
             [[ ! -e "/etc/.maAsiss/.Shellbtsss" ]] && {
-				wget -qO- https://scrzoke.000webhostapp.com/crud/ShellBot.sh >/etc/.maAsiss/.Shellbtsss
+				wget -qO- https://raw.githubusercontent.com/scvpn/dotvpn/main/bot_panel/ShellBot.sh >/etc/.maAsiss/.Shellbtsss
 			}
-			[[ "$(grep -wc "scvpn_bot" "/etc/rc.local")" = '0' ]] && {
-			    sed -i '$ i\screen -dmS scvpn_bot bbt' /etc/rc.local >/dev/null 2>&1
+			[[ "$(grep -wc "scvps_bot" "/etc/rc.local")" = '0' ]] && {
+			    sed -i '$ i\screen -dmS scvps_bot bbt' /etc/rc.local >/dev/null 2>&1
 			}
         }
-        screen -dmS scvpn_bot bbt >/dev/null 2>&1
+        screen -dmS scvps_bot bbt >/dev/null 2>&1
         fun_bot1
-        [[ $(ps x | grep "scvpn_bot" | grep -v grep | wc -l) != '0' ]] && echo -e "\nBot successfully activated !" || echo -e "\nError1! Information not valid !"
+        [[ $(ps x | grep "scvps_bot" | grep -v grep | wc -l) != '0' ]] && echo -e "\nBot successfully activated !" || echo -e "\nError1! Information not valid !"
         sleep 2
         menu
         } || {
        clear
         echo -e "Info...\n"
         fun_bot2() {
-            screen -r -S "scvpn_bot" -X quit >/dev/null 2>&1
-            [[ $(grep -wc "scvpn_bot" /etc/rc.local) != '0' ]] && {
-                sed -i '/scvpn_bot/d' /etc/rc.local
+            screen -r -S "scvps_bot" -X quit >/dev/null 2>&1
+            [[ $(grep -wc "scvps_bot" /etc/rc.local) != '0' ]] && {
+                sed -i '/scvps_bot/d' /etc/rc.local
             }
             rm -f /etc/.maAsiss/bot.conf
             sleep 1
         }
         fun_bot2
-        echo -e "\nBot scvpn Stopped!"
+        echo -e "\nBot Scvps Stopped!"
         sleep 2
         menu
     }
