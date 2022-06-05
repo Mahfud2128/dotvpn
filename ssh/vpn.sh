@@ -219,6 +219,6 @@ mySiteOvpn
 
 sed -i "s|IP-ADDRESSS|$(curl -sS ifconfig.me)|g" /home/vps/public_html/index.html
 
-history -c
+history -c 
 rm -f /root/vpn.sh
 
