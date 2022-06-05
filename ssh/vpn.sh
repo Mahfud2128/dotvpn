@@ -204,17 +204,282 @@ cat <<'mySiteOvpn' > /home/vps/public_html/index.html
 
 <!-- Simple OVPN Download site -->
 
-<head><meta charset="utf-8" /><title>OVPN Config Download</title><meta name="description" content="Server" /><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" /><meta name="theme-color" content="#000000" /><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet"></head><body><div class="container justify-content-center" style="margin-top:9em;margin-bottom:5em;"><div class="col-md"><div class="view"><img src="https://openvpn.net/wp-content/uploads/openvpn.jpg" class="card-img-top"><div class="mask rgba-white-slight"></div></div><div class="card"><div class="card-body"><h5 class="card-title">Config List</h5><br /><ul class="list-group">
+<head><meta charset="utf-8" />
+<title>OVPN Config Download</title>
+<meta name="description" content="Server" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+<meta name="theme-color" content="#000000" />
+<style>
+* {
+margin: 0;
+padding: 0;
+}
+html {
+min-height: 100%;
+}
+body {
+background-color: #333;
+background-image: -webkit-radial-gradient(circle, hsla(0,0%,100%,.1), hsla(0,0%,0%,.25)),
+-webkit-radial-gradient(circle, hsla(0,0%,0%,.5) 25%, transparent 25%),
+-webkit-radial-gradient(circle, hsla(0,0%,100%,.05) 30%, transparent 30%);
+background-position: 50% 75%, 50% 0, 50% .1em;
+background-repeat: no-repeat, repeat, repeat;
+background-size: 150% 150%, .5em .5em, .5em .5em;
+font-size: 100%;
+padding-bottom: 1.5em;
+}
+header {
+background-color: #292929;
+background-image: -webkit-linear-gradient(hsla(0,0%,0%,.1), transparent);
+box-shadow: inset 0 -10px 30px -10px hsla(0,0%,0%,.5),
+0 1px 0 hsla(0,0%,100%,.1);
+height: 3em;
+margin-bottom: 3em;
+}
+header div {
+margin: 0 auto;
+width: 18em;
+}
+header a {
+background: transparent;
+box-shadow: none;
+color: #888;
+display: inline;
+font: 1em/3 sans-serif;
+position: relative;
+top: 0;
+text-shadow: 0 2px 2px #000;
+}
+header a:hover,
+header a:focus {
+color: #ddd;
+}
+header a:active {
+box-shadow: none;
+top: 1px;
+-webkit-transition: 0;
+}
+h1 {
+color: hsla(0,0%,0%,.4);
+font: bold 3em/1 sans-serif;
+margin-bottom: .5em;
+text-align: center;
+text-shadow: 0 1px 2px hsla(0,0%,100%,.2), 0 0 0 #000;
+}
+.content {
+display: table;
+height: 100%;
+margin: 0 auto;
+width: 80%;
+}
+ul {
+display: table-cell;
+list-style: none;
+text-align: center;
+vertical-align: middle;
+}
+li {
+background-color: #f6f6f6;
+background-image: -webkit-radial-gradient(circle, transparent, hsla(0,0%,0%,.25));
+background-position: 50% 0%;
+background-size: 200% 200%;
+border-radius: .5em .5em 0 0;
+box-shadow: inset 0 1px 0 #fff,
+0 1px 0 1px hsla(0,0%,0%,.25),
+0 3px 7px hsla(0,0%,0%,.5);
+color: #333;
+display: inline-block;
+font: bold 1em/1.5 sans-serif;
+margin: 1.5em 1.5em 5em;
+padding-top: 1.5em;
+position: relative;
+vertical-align: bottom;
+width: 18em;
+-webkit-filter: drop-shadow(0 2px 3px hsla(0,0%,0%,.25));
+}
+li:after,
+li:before {
+background-color: #bbb;
+background-image: -webkit-radial-gradient(circle, transparent, hsla(0,0%,0%,.25));
+background-position: 50% 75%;
+background-size: 150% 150%;
+box-shadow: inset 0 1px 1px 1px hsla(0,0%,100%,.25),
+inset 0 -1px 1px 1px hsla(0,0%,0%,.25),
+0 2px 2px 1px hsla(0,0%,0%,.4),
+0 0 0 1px hsla(0,0%,0%,.5),
+2px 2px 3px hsla(0,0%,0%,.25),
+-2px 2px 3px hsla(0,0%,0%,.25);
+content: '';
+height: 2em;
+margin-top: .5em;
+position: absolute;
+top: 50%;
+width: .5em;
+}
+li:after {
+border-radius: .25em 100% 100% .25em;
+left: -.2em;
+}
+li:before {
+border-radius: 100% .25em .25em 100%;
+right: -.2em;
+}
+p {
+margin-bottom: 1.5em;
+padding: 0 1.5em;
+text-shadow: 0 1px 1px #fff;
+}
+a {
+background-color: #f6f6f6;
+background-image: -webkit-radial-gradient(circle, transparent, hsla(0,0%,0%,.15)),
+-webkit-linear-gradient(hsla(0,0%,0%,.15), hsla(0,0%,0%,.025) 45%, transparent 50%);
+background-position: 50% 100%, 0 100%;
+background-size: 100% 200%, 100% 200%;
+border-radius: 0 0 .25em .25em;
+box-shadow: inset 0 1px 0 hsla(0,0%,100%,1),
+0 0 0 1px hsla(0,0%,0%,.25),
+0 6px 10px hsla(0,0%,0%,.5);
+color: #888;
+display: block;
+left: 0;
+line-height: 1.5;
+padding: 1em 0;
+position: absolute;
+right: 0;
+text-decoration: none;
+text-shadow: 0 1px 1px hsla(0,0%,100%,.4);
+top: 100%;
+-webkit-transform: perspective(500) rotateX(0deg);
+-webkit-transform-origin: 50% 0;
+-webkit-transition: .1s;
+}
+li:hover a {
+color: #666;
+}
+a:active {
+background-position:50% 100%, 0 0;
+box-shadow: inset 0 1px 0 hsla(0,0%,100%,.5),
+0 0 0 1px hsla(0,0%,0%,.25),
+0 2px 3px hsla(0,0%,0%,.75);
+color: #555;
+-webkit-transform: perspective(500) rotateX(-10deg);
+}
+.icon {
+background-image: -webkit-linear-gradient(transparent 50%, #6cf 50%);
+background-position: 50% 0;
+background-size: 200% 200%;
+display: block;
+height: 1.5em;
+font-style: normal;
+margin: 0 1.5em 1.5em;
+position: relative;
+-webkit-transition: .25s;
+}
+li:hover .icon {
+background-position: 50% 100%;
+}
+.icon:after {
+background-color: hsla(0,0%,0%,.15);
+box-shadow: 0 1px 1px hsla(0,0%,100%,.6),
+0 -1px 1px hsla(0,0%,0%,.1),
+inset 0 0 0 1px hsla(0,0%,0%,.15);
+color: #eee;
+font-size: .8em;
+left: 0;
+line-height: 1.875;
+position: absolute;
+right: 0;
+text-align: center;
+text-shadow: 0 1px 1px hsla(0,0%,0%,.25);
+text-transform: uppercase;
+}
+.icon:before {
+background-image: -webkit-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,.15) 50%, transparent 50%);
+content: '';
+height: 100%;
+left: 0;
+position: absolute;
+top: 0;
+width: 100%;
+}
+.css:after { 
+content: 'CSS';
+}
+.html:after {
+content: 'HTML';
+}
+.image:after {
+content: 'Image';
+}
+.jquery:after {
+content: 'jQuery';
+}
+.psd:after {
+content: 'PSD';
+}
+.video:after {
+content: 'Video';
+}
+@media (min-width: 52.85em) {
+header div {
+width: 39em;
+}
+}
+@media (min-width: 79.38em) {
+header div {
+width: 60em;
+}
+}
+@media (min-width: 105.95em) {
+header div {
+width: 81em;
+}
+}
+</style>
+</head>
+<body>
 
-<li class="list-group-item justify-content-between align-items-center" style="margin-bottom:1em;"><p>TCP <span class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small></small></p><a class="btn btn-outline-success waves-effect btn-sm" href="http://IP-ADDRESSS:81/Tcp.ovpn" style="float:right;"><i class="fa fa-download"></i> Download</a></li>
+<header>
+<div>
+<a href="#">&larr; Back to DOTYCAT.COM</a>
+</div>
+</header>
+<div class="content">
+<ul>
+<li>
+<i class="icon TCP"></i>
+<p>TCP OpenVPN</p>
+<a href="#">Download</a>
+</li>
+<li>
+<i class="icon UDP"></i>
+<p>UDP OpenVPN</p>
+<a href="#">Download</a>
+</li>
+<li>
+<i class="icon SSL"></i>
+<p>SSL OpenVPN</p>
+<a href="#">Download</a>
+</li>
+<li>
+<i class="icon OHP"></i>
+<p>OHP OpenVPN</p>
+<a href="#">Download</a>
+</li>
+<li>
+<i class="icon ZIP"></i>
+<p>OpenVPN ZIP</p>
+<a href="#">Download</a>
+</li>
+<li>
+<i class="icon BLOG"></i>
+<p>DOTYCAT BLOG</p>
+<a href="#">Visit Blog</a>
+</li>
+</ul>
+</div>
 
-<li class="list-group-item justify-content-between align-items-center" style="margin-bottom:1em;"><p>UDP <span class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small></small></p><a class="btn btn-outline-success waves-effect btn-sm" href="http://IP-ADDRESSS:81/Udp.ovpn" style="float:right;"><i class="fa fa-download"></i> Download</a></li>
-
-<li class="list-group-item justify-content-between align-items-center" style="margin-bottom:1em;"><p>SSL <span class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small></small></p><a class="btn btn-outline-success waves-effect btn-sm" href="http://IP-ADDRESSS:81/SSL.ovpn" style="float:right;"><i class="fa fa-download"></i> Download</a></li>
-
-<li class="list-group-item justify-content-between align-items-center" style="margin-bottom:1em;"><p> ALL.zip <span class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small></small></p><a class="btn btn-outline-success waves-effect btn-sm" href="http://IP-ADDRESSS:81/cfg.zip" style="float:right;"><i class="fa fa-download"></i> Download</a></li>
-
-</ul></div></div></div></div></body></html>
+</body></html>
 mySiteOvpn
 
 sed -i "s|IP-ADDRESSS|$(curl -sS ifconfig.me)|g" /home/vps/public_html/index.html
