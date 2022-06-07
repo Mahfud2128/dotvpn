@@ -384,7 +384,7 @@ hargapptp=$(grep -w "Price PPTP" /etc/.maAsiss/price | awk '{print $NF}')
         return 0
     else
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-            --text "===========================\n⛔ ACCESS DENIED ⛔\n===========================\n\nfor register to be a reseller contact : $admin_bot_panel\n\n===========================\nBot Panel By : @scvps\n===========================\n"
+            --text "===========================\n⛔ ACCESS DENIED ⛔\n===========================\n\nfor register to be a reseller contact : $admin_bot_panel\n\n===========================\nBot Panel By : @DotyCat\n===========================\n"
         return 0
     fi
 }
