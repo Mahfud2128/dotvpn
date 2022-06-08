@@ -124,15 +124,15 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 
 Save_And_Exit () {
     cd /root/user-backup
-    git config --global user.email "emailgithhb" &> /dev/null
-    git config --global user.name "username" &> /dev/null
+    git config --global user.email "nonynaz9691@gmail.com" &> /dev/null
+    git config --global user.name "scvpn" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
     git remote add origin https://github.com/scvpn/user-backup-db
-    git push -f https://TOKEN Github@github.com/scvpn/user-backup-db.git &> /dev/null
+    git push -f https://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 Github@github.com/scvpn/user-backup-db.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
