@@ -120,6 +120,10 @@ echo -e "User         : $NameUser
 last-backup : $LLatest
 " >> /root/user-backup/$NameUser/$NameUser-last-backup
 mv /root/$NameUser.zip /root/user-backup/$NameUser/
+
+echo -e "User         : $NameUser
+last-backup : $LLatest
+" >> /root/user-backup/all-user-last-backup-log
 }
 
 Save_And_Exit () {
@@ -131,8 +135,9 @@ Save_And_Exit () {
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/scvpn/user-backup-db
-    git push -f https://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 Github@github.com/scvpn/user-backup-db.git &> /dev/null
+    git remote add origin https://github.com/scvpn/user-backup-db &> /dev/null
+    git push -f https://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@github.com/scvpn/user-backup-db.git &> /dev/null
+    #  git push https://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@github.com/scvpn/user-backup-db.git
 }
 
 if [ ! -d "/root/user-backup/" ]; then
