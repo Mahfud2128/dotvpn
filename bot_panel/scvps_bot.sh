@@ -1786,9 +1786,9 @@ mkdir -p /etc/.maAsiss/info-user-v2ray
 echo "$userna:$data" >/etc/.maAsiss/info-user-v2ray/$userna
 uuid=$(cat /proc/sys/kernel/random/uuid)
 sed -i '/#vmessWSTLS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
 sed -i '/#vmessWS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
             
 cat> /etc/$raycheck/$userna-tls.json <<-EOF
 {
@@ -1797,7 +1797,7 @@ cat> /etc/$raycheck/$userna-tls.json <<-EOF
 "add": "${domain}",
 "port": "${tls}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -1812,7 +1812,7 @@ cat> /etc/$raycheck/$userna-none.json <<-EOF
 "add": "${domain}",
 "port": "${none}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -1872,9 +1872,9 @@ sed -i "/${message_from_id}/c\USER: ${message_from_id} SALDO: $_CurrSal TYPE: re
             
 uuid=$(cat /proc/sys/kernel/random/uuid)
 sed -i '/#vmessWSTLS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
 sed -i '/#vmessWS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
             
 cat> /etc/$raycheck/$userna-tls.json <<-EOF
 {
@@ -1883,7 +1883,7 @@ cat> /etc/$raycheck/$userna-tls.json <<-EOF
 "add": "${domain}",
 "port": "${tls}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -1898,7 +1898,7 @@ cat> /etc/$raycheck/$userna-none.json <<-EOF
 "add": "${domain}",
 "port": "${none}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -1968,9 +1968,9 @@ mkdir -p /etc/.maAsiss/info-user-v2ray
 echo "$userna:$data" >/etc/.maAsiss/info-user-v2ray/$userna
 uuid=$(cat /proc/sys/kernel/random/uuid)
 sed -i '/#vmessWSTLS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
 sed -i '/#vmessWS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
             
 cat> /etc/$raycheck/$userna-tls.json <<-EOF
 {
@@ -1979,7 +1979,7 @@ cat> /etc/$raycheck/$userna-tls.json <<-EOF
 "add": "${domain}",
 "port": "${tls}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -1994,7 +1994,7 @@ cat> /etc/$raycheck/$userna-none.json <<-EOF
 "add": "${domain}",
 "port": "${none}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -2055,9 +2055,9 @@ sed -i "/${message_from_id}/c\USER: ${message_from_id} SALDO: $_CurrSal TYPE: re
             
 uuid=$(cat /proc/sys/kernel/random/uuid)
 sed -i '/#vmessWSTLS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
 sed -i '/#vmessWS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
             
 cat> /etc/$raycheck/$userna-tls.json <<-EOF
 {
@@ -2066,7 +2066,7 @@ cat> /etc/$raycheck/$userna-tls.json <<-EOF
 "add": "${domain}",
 "port": "${tls}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -2081,7 +2081,7 @@ cat> /etc/$raycheck/$userna-none.json <<-EOF
 "add": "${domain}",
 "port": "${none}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -2224,9 +2224,9 @@ func_add_ray_trial() {
 echo "$userna:$exp" >/etc/.maAsiss/info-user-v2ray/$userna
 uuid=$(cat /proc/sys/kernel/random/uuid)
 sed -i '/#vmessWSTLS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
 sed -i '/#vmessWS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
             
 cat> /etc/$raycheck/$userna-tls.json <<-EOF
 {
@@ -2235,7 +2235,7 @@ cat> /etc/$raycheck/$userna-tls.json <<-EOF
 "add": "${domain}",
 "port": "${tls}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -2250,7 +2250,7 @@ cat> /etc/$raycheck/$userna-none.json <<-EOF
 "add": "${domain}",
 "port": "${none}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -7522,9 +7522,9 @@ none="$(cat /root/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed '
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
 sed -i '/#vmessWSTLS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
 sed -i '/#vmessWS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
             
 cat> /etc/$raycheck/$userna-tls.json <<-EOF
 {
@@ -7533,7 +7533,7 @@ cat> /etc/$raycheck/$userna-tls.json <<-EOF
 "add": "${domain}",
 "port": "${tls}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -7548,7 +7548,7 @@ cat> /etc/$raycheck/$userna-none.json <<-EOF
 "add": "${domain}",
 "port": "${none}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
