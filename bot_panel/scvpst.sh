@@ -1786,9 +1786,9 @@ mkdir -p /etc/.maAsiss/info-user-v2ray
 echo "$userna:$data" >/etc/.maAsiss/info-user-v2ray/$userna
 uuid=$(cat /proc/sys/kernel/random/uuid)
 sed -i '/#vmessWSTLS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
 sed -i '/#vmessWS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
             
 cat> /etc/$raycheck/$userna-tls.json <<-EOF
 {
@@ -1872,9 +1872,9 @@ sed -i "/${message_from_id}/c\USER: ${message_from_id} SALDO: $_CurrSal TYPE: re
             
 uuid=$(cat /proc/sys/kernel/random/uuid)
 sed -i '/#vmessWSTLS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
 sed -i '/#vmessWS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
             
 cat> /etc/$raycheck/$userna-tls.json <<-EOF
 {
@@ -1883,7 +1883,7 @@ cat> /etc/$raycheck/$userna-tls.json <<-EOF
 "add": "${domain}",
 "port": "${tls}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -1898,7 +1898,7 @@ cat> /etc/$raycheck/$userna-none.json <<-EOF
 "add": "${domain}",
 "port": "${none}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -1921,7 +1921,7 @@ env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Port TLS : $tls\n"
 env_msg+="Port None TLS : $none\n"
 env_msg+="ID : $uuid\n"
-env_msg+="AlterID : 64\n"
+env_msg+="AlterID : 0\n"
 env_msg+="Security : auto\n"
 env_msg+="Network : websocket/ws\n"
 env_msg+="Path : /${raycheck}ws\n"
@@ -1968,9 +1968,9 @@ mkdir -p /etc/.maAsiss/info-user-v2ray
 echo "$userna:$data" >/etc/.maAsiss/info-user-v2ray/$userna
 uuid=$(cat /proc/sys/kernel/random/uuid)
 sed -i '/#vmessWSTLS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
 sed -i '/#vmessWS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
             
 cat> /etc/$raycheck/$userna-tls.json <<-EOF
 {
@@ -1979,7 +1979,7 @@ cat> /etc/$raycheck/$userna-tls.json <<-EOF
 "add": "${domain}",
 "port": "${tls}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -1994,7 +1994,7 @@ cat> /etc/$raycheck/$userna-none.json <<-EOF
 "add": "${domain}",
 "port": "${none}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -2017,7 +2017,7 @@ env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Port TLS : $tls\n"
 env_msg+="Port None TLS : $none\n"
 env_msg+="ID : $uuid\n"
-env_msg+="AlterID : 64\n"
+env_msg+="AlterID : 0\n"
 env_msg+="Security : auto\n"
 env_msg+="Network : websocket/ws\n"
 env_msg+="Path : /${raycheck}ws\n"
@@ -2055,9 +2055,9 @@ sed -i "/${message_from_id}/c\USER: ${message_from_id} SALDO: $_CurrSal TYPE: re
             
 uuid=$(cat /proc/sys/kernel/random/uuid)
 sed -i '/#vmessWSTLS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
 sed -i '/#vmessWS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
             
 cat> /etc/$raycheck/$userna-tls.json <<-EOF
 {
@@ -2066,7 +2066,7 @@ cat> /etc/$raycheck/$userna-tls.json <<-EOF
 "add": "${domain}",
 "port": "${tls}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -2081,7 +2081,7 @@ cat> /etc/$raycheck/$userna-none.json <<-EOF
 "add": "${domain}",
 "port": "${none}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -2105,7 +2105,7 @@ env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Port TLS : $tls\n"
 env_msg+="Port None TLS : $none\n"
 env_msg+="ID : $uuid\n"
-env_msg+="AlterID : 64\n"
+env_msg+="AlterID : 0\n"
 env_msg+="Security : auto\n"
 env_msg+="Network : websocket/ws\n"
 env_msg+="Path : /${raycheck}ws\n"
@@ -2224,9 +2224,9 @@ func_add_ray_trial() {
 echo "$userna:$exp" >/etc/.maAsiss/info-user-v2ray/$userna
 uuid=$(cat /proc/sys/kernel/random/uuid)
 sed -i '/#vmessWSTLS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
 sed -i '/#vmessWS$/a\### '"$userna $exp"'\
-},{"id": "'""$uuid""'","alterId": '"64"',"email": "'""$userna""'"' /etc/$raycheck/config.json
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$userna""'"' /etc/$raycheck/config.json
             
 cat> /etc/$raycheck/$userna-tls.json <<-EOF
 {
@@ -2235,7 +2235,7 @@ cat> /etc/$raycheck/$userna-tls.json <<-EOF
 "add": "${domain}",
 "port": "${tls}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -2250,7 +2250,7 @@ cat> /etc/$raycheck/$userna-none.json <<-EOF
 "add": "${domain}",
 "port": "${none}",
 "id": "${uuid}",
-"aid": "64",
+"aid": "0",
 "net": "ws",
 "path": "/${raycheck}ws",
 "type": "none",
@@ -2296,7 +2296,7 @@ env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Port TLS : $tls\n"
 env_msg+="Port None TLS : $none\n"
 env_msg+="ID : $uuid\n"
-env_msg+="AlterID : 64\n"
+env_msg+="AlterID : 0\n"
 env_msg+="Security : auto\n"
 env_msg+="Network : websocket/ws\n"
 env_msg+="Path : /${raycheck}ws\n"
