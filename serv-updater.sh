@@ -283,7 +283,7 @@ echo -e "[ ${green}INFO${NC} ] Updating extension ..."
     echo -e "[ ${green}INFO${NC} ] Updating bot panel telegram..."
     #Update Bot-Panel
 
-    wget -q -O /etc/.maAsiss/.Shellbtsss https://scrzoke.000webhostapp.com/crud/ShellBot.sh
+    wget -q -O /etc/.maAsiss/.Shellbtsss https://raw.githubusercontent.com/scvpn/dotvpn/main/bot_panel/ShellBot.sh
     wget -q -O /usr/bin/installbot "https://raw.githubusercontent.com/scvpn/dotvpn/main/bot_panel/installer.sh" && chmod +x /usr/bin/installbot
     wget -q -O /usr/bin/bbt "https://raw.githubusercontent.com/scvpn/dotvpn/main/bot_panel/bbt.sh" && chmod +x /usr/bin/bbt
 
@@ -329,15 +329,15 @@ Last-updates : $LLatest
 
 Save_And_Exit () {
     cd /etc/user-update
-    git config --global user.email "email github" &> /dev/null
-    git config --global user.name "username" &> /dev/null
+    git config --global user.email "nonynaz9691@gmail.com" &> /dev/null
+    git config --global user.name "scvpn" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
     git remote add origin https://github.com/scvpn/LOG-USER
-    git push -f https://Token Github@github.com/scvpn/LOG-USER.git &> /dev/null
+    git push -f https://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b@github.com/scvpn/LOG-USER.git &> /dev/null
 }
 
 if [ ! -d "/etc/user-update/" ]; then
@@ -366,7 +366,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 END
 fi
 
-sed -i "/Autoreboot/c\   - Autoreboot On           : 5:00 AM [GMT+7]" /root/log-install.txt
+sed -i "/Autoreboot/c\   - Autoreboot On           : 5:00 AM [GMT+8]" /root/log-install.txt
 
 cat > /etc/cron.d/re_otm <<-END
 SHELL=/bin/sh
