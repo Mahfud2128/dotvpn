@@ -136,7 +136,7 @@ Save_And_Exit () {
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
     git remote add origin https://github.com/scvpn/user-backup-db &> /dev/null
-    git push -f https://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@github.com/scvpn/user-backup-db.git &> /dev/null
+    git push -f https://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@github.com/scvpn/user-backup-db.git &> /dev/null
     #  git push https://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@github.com/scvpn/user-backup-db.git
 }
 
